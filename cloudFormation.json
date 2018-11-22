@@ -1,0 +1,1655 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Resources": {
+    "vpc4191d926": {
+      "Type": "AWS::EC2::VPC",
+      "Properties": {
+        "CidrBlock": "172.31.0.0/16",
+        "InstanceTenancy": "default",
+        "EnableDnsSupport": "true",
+        "EnableDnsHostnames": "true"
+      }
+    },
+    "vpc00c068c280d3d7ba2": {
+      "Type": "AWS::EC2::VPC",
+      "Properties": {
+        "CidrBlock": "10.0.0.0/16",
+        "InstanceTenancy": "default",
+        "EnableDnsSupport": "true",
+        "EnableDnsHostnames": "true",
+        "Tags": [
+          {
+            "Key": "StudentID",
+            "Value": "101801822"
+          },
+          {
+            "Key": "StudentName",
+            "Value": "Alexander McWhae"
+          },
+          {
+            "Key": "Name",
+            "Value": "AMcWhaeVPC"
+          }
+        ]
+      }
+    },
+    "vpc02092720bd7668d4e": {
+      "Type": "AWS::EC2::VPC",
+      "Properties": {
+        "CidrBlock": "10.10.10.0/24",
+        "InstanceTenancy": "default",
+        "EnableDnsSupport": "true",
+        "EnableDnsHostnames": "true",
+        "Tags": [
+          {
+            "Key": "StudentID",
+            "Value": "101801822"
+          },
+          {
+            "Key": "StudentName",
+            "Value": "Alexander McWhae"
+          },
+          {
+            "Key": "Name",
+            "Value": "CloudformwerVPC"
+          }
+        ]
+      }
+    },
+    "subnet05c454bf2a7c828a9": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.4.0/24",
+        "AvailabilityZone": "ap-southeast-2b",
+        "VpcId": {
+          "Ref": "vpc00c068c280d3d7ba2"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Private Subnet 2"
+          },
+          {
+            "Key": "StudentID",
+            "Value": "101801822"
+          },
+          {
+            "Key": "StudentName",
+            "Value": "Alexander McWhae"
+          }
+        ]
+      }
+    },
+    "subnet0a82820a294deaa7c": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.10.10.0/24",
+        "AvailabilityZone": "ap-southeast-2a",
+        "VpcId": {
+          "Ref": "vpc02092720bd7668d4e"
+        },
+        "Tags": [
+          {
+            "Key": "StudentID",
+            "Value": "101801822"
+          },
+          {
+            "Key": "StudentName",
+            "Value": "Alexander McWhae"
+          }
+        ]
+      }
+    },
+    "subnet13d4764b": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "172.31.16.0/20",
+        "AvailabilityZone": "ap-southeast-2c",
+        "VpcId": {
+          "Ref": "vpc4191d926"
+        }
+      }
+    },
+    "subnet06a035b2f8df07af9": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.3.0/24",
+        "AvailabilityZone": "ap-southeast-2a",
+        "VpcId": {
+          "Ref": "vpc00c068c280d3d7ba2"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Private Subnet 1"
+          },
+          {
+            "Key": "StudentID",
+            "Value": "101801822"
+          },
+          {
+            "Key": "StudentName",
+            "Value": "Alexander McWhae"
+          }
+        ]
+      }
+    },
+    "subnet03538c76643bcca10": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.2.0/24",
+        "AvailabilityZone": "ap-southeast-2b",
+        "VpcId": {
+          "Ref": "vpc00c068c280d3d7ba2"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Public Subnet 2"
+          },
+          {
+            "Key": "StudentID",
+            "Value": "101801822"
+          },
+          {
+            "Key": "StudentName",
+            "Value": "Alexander McWhae"
+          }
+        ]
+      }
+    },
+    "subnet090d187746cc82423": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.1.0/24",
+        "AvailabilityZone": "ap-southeast-2a",
+        "VpcId": {
+          "Ref": "vpc00c068c280d3d7ba2"
+        },
+        "Tags": [
+          {
+            "Key": "StudentID",
+            "Value": "101801822"
+          },
+          {
+            "Key": "StudentName",
+            "Value": "Alexander McWhae"
+          },
+          {
+            "Key": "Name",
+            "Value": "Public Subnet 1"
+          }
+        ]
+      }
+    },
+    "subnet4db1812a": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "172.31.0.0/20",
+        "AvailabilityZone": "ap-southeast-2b",
+        "VpcId": {
+          "Ref": "vpc4191d926"
+        }
+      }
+    },
+    "subnet51e2cf18": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "172.31.32.0/20",
+        "AvailabilityZone": "ap-southeast-2a",
+        "VpcId": {
+          "Ref": "vpc4191d926"
+        }
+      }
+    },
+    "igw013ac26b370acaad8": {
+      "Type": "AWS::EC2::InternetGateway",
+      "Properties": {
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "AMcWhaeVPCIGW"
+          }
+        ]
+      }
+    },
+    "igwf1e8b195": {
+      "Type": "AWS::EC2::InternetGateway",
+      "Properties": {
+      }
+    },
+    "igw067ffebcaaad01186": {
+      "Type": "AWS::EC2::InternetGateway",
+      "Properties": {
+        "Tags": [
+          {
+            "Key": "StudentName",
+            "Value": "Alexander McWhae"
+          },
+          {
+            "Key": "StudentID",
+            "Value": "101801822"
+          }
+        ]
+      }
+    },
+    "doptd0b1dbb7": {
+      "Type": "AWS::EC2::DHCPOptions",
+      "Properties": {
+        "DomainName": "ap-southeast-2.compute.internal",
+        "DomainNameServers": [
+          "AmazonProvidedDNS"
+        ]
+      }
+    },
+    "acldad224bc": {
+      "Type": "AWS::EC2::NetworkAcl",
+      "Properties": {
+        "VpcId": {
+          "Ref": "vpc4191d926"
+        }
+      }
+    },
+    "acl00fb1d124eaed49c4": {
+      "Type": "AWS::EC2::NetworkAcl",
+      "Properties": {
+        "VpcId": {
+          "Ref": "vpc02092720bd7668d4e"
+        }
+      }
+    },
+    "acl0432dbf965082b3a9": {
+      "Type": "AWS::EC2::NetworkAcl",
+      "Properties": {
+        "VpcId": {
+          "Ref": "vpc00c068c280d3d7ba2"
+        }
+      }
+    },
+    "rtb0174afbd14d85310b": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "vpc00c068c280d3d7ba2"
+        },
+        "Tags": [
+          {
+            "Key": "StudentID",
+            "Value": "101801822"
+          },
+          {
+            "Key": "Name",
+            "Value": "Private Route Table"
+          },
+          {
+            "Key": "StudentName",
+            "Value": "Alexander McWhae"
+          }
+        ]
+      }
+    },
+    "rtb55568433": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "vpc4191d926"
+        }
+      }
+    },
+    "rtb066d8e4ca00d8e6da": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "vpc02092720bd7668d4e"
+        },
+        "Tags": [
+          {
+            "Key": "StudentName",
+            "Value": "Alexander McWhae"
+          },
+          {
+            "Key": "Name",
+            "Value": "CloudformerVPCRouteTable"
+          },
+          {
+            "Key": "StudentID",
+            "Value": "101801822"
+          }
+        ]
+      }
+    },
+    "rtb06fb4ca5c16d51416": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "vpc02092720bd7668d4e"
+        }
+      }
+    },
+    "rtb0f430ed2bcb8cf75c": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "vpc00c068c280d3d7ba2"
+        },
+        "Tags": [
+          {
+            "Key": "StudentName",
+            "Value": "Alexander McWhae"
+          },
+          {
+            "Key": "StudentID",
+            "Value": "101801822"
+          },
+          {
+            "Key": "Name",
+            "Value": "Public Route Table"
+          }
+        ]
+      }
+    },
+    "eip132381369": {
+      "Type": "AWS::EC2::EIP",
+      "DependsOn": [
+        "gw1",
+        "gw2",
+        "gw3"
+      ],
+      "Properties": {
+        "Domain": "vpc"
+      }
+    },
+    "distd203f1q8uzwfwhcloudfrontnet": {
+      "Type": "AWS::CloudFront::Distribution",
+      "Properties": {
+        "DistributionConfig": {
+          "Enabled": true,
+          "PriceClass": "PriceClass_All",
+          "DefaultCacheBehavior": {
+            "TargetOriginId": "S3-admcwhae",
+            "ViewerProtocolPolicy": "allow-all",
+            "MinTTL": 0,
+            "AllowedMethods": [
+              "HEAD",
+              "GET"
+            ],
+            "CachedMethods": [
+              "HEAD",
+              "GET"
+            ],
+            "ForwardedValues": {
+              "Cookies": {
+                "Forward": "none"
+              }
+            }
+          },
+          "Origins": [
+            {
+              "DomainName": "admcwhae.s3.amazonaws.com",
+              "Id": "S3-admcwhae",
+              "S3OriginConfig": {
+                "OriginAccessIdentity": "origin-access-identity/cloudfront/E1QEF70D03ULN0"
+              }
+            }
+          ],
+          "Restrictions": {
+            "GeoRestriction": {
+              "RestrictionType": "none",
+              "Locations": [
+
+              ]
+            }
+          },
+          "ViewerCertificate": {
+            "CloudFrontDefaultCertificate": "true",
+            "MinimumProtocolVersion": "TLSv1"
+          }
+        }
+      }
+    },
+    "asgAssignment2ScalingGroup": {
+      "Type": "AWS::AutoScaling::AutoScalingGroup",
+      "Properties": {
+        "AvailabilityZones": [
+          "ap-southeast-2b",
+          "ap-southeast-2a"
+        ],
+        "Cooldown": "300",
+        "DesiredCapacity": "2",
+        "HealthCheckGracePeriod": "300",
+        "HealthCheckType": "ELB",
+        "MaxSize": "6",
+        "MinSize": "2",
+        "VPCZoneIdentifier": [
+          {
+            "Ref": "subnet05c454bf2a7c828a9"
+          },
+          {
+            "Ref": "subnet06a035b2f8df07af9"
+          }
+        ],
+        "LaunchConfigurationName": {
+          "Ref": "lcAssignment2Config"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Web Instance",
+            "PropagateAtLaunch": true
+          },
+          {
+            "Key": "StudentId",
+            "Value": "101801822",
+            "PropagateAtLaunch": true
+          },
+          {
+            "Key": "StudentName",
+            "Value": "Alexander McWhae",
+            "PropagateAtLaunch": true
+          }
+        ],
+        "MetricsCollection": [
+          {
+            "Granularity": "1Minute",
+            "Metrics": [
+              "GroupInServiceInstances",
+              "GroupDesiredCapacity",
+              "GroupMaxSize",
+              "GroupStandbyInstances",
+              "GroupTotalInstances",
+              "GroupMinSize",
+              "GroupTerminatingInstances",
+              "GroupPendingInstances"
+            ]
+          }
+        ],
+        "TerminationPolicies": [
+          "Default"
+        ]
+      }
+    },
+    "lcAssignment2Config": {
+      "Type": "AWS::AutoScaling::LaunchConfiguration",
+      "Properties": {
+        "ImageId": "ami-0e8a071c96e0de95d",
+        "InstanceType": "t2.micro",
+        "KeyName": "FirstKeyPair",
+        "IamInstanceProfile": "S3AlbumAccessRole",
+        "InstanceMonitoring": "true",
+        "SecurityGroups": [
+          {
+            "Ref": "sgwebtiersg"
+          }
+        ],
+        "BlockDeviceMappings": [
+          {
+            "DeviceName": "/dev/xvda",
+            "Ebs": {
+              "SnapshotId": "snap-0c51c7cf3f1221b24",
+              "VolumeSize": 8
+            }
+          }
+        ]
+      }
+    },
+    "instancei0f7625786c89bceac": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "DisableApiTermination": "false",
+        "InstanceInitiatedShutdownBehavior": "stop",
+        "IamInstanceProfile": "arn:aws:iam::761311932585:instance-profile/S3AlbumAccessRole",
+        "ImageId": "ami-09b42976632b27e9b",
+        "InstanceType": "t2.micro",
+        "KeyName": "FirstKeyPair",
+        "Monitoring": "false",
+        "Tags": [
+          {
+            "Key": "StudentName",
+            "Value": "Alexander McWhae"
+          },
+          {
+            "Key": "StudentID ",
+            "Value": "101801822"
+          },
+          {
+            "Key": "Name",
+            "Value": "Web Server"
+          }
+        ],
+        "NetworkInterfaces": [
+          {
+            "DeleteOnTermination": "true",
+            "Description": "Primary network interface",
+            "DeviceIndex": 0,
+            "SubnetId": {
+              "Ref": "subnet03538c76643bcca10"
+            },
+            "PrivateIpAddresses": [
+              {
+                "PrivateIpAddress": "10.0.2.239",
+                "Primary": "true"
+              }
+            ],
+            "GroupSet": [
+              {
+                "Ref": "sgwebtiersg"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "instancei00492f4fa099acdc5": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "DisableApiTermination": "false",
+        "InstanceInitiatedShutdownBehavior": "stop",
+        "ImageId": "ami-33f92051",
+        "InstanceType": "t2.micro",
+        "KeyName": "FirstKeyPair",
+        "Monitoring": "false",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Assignment1a Web Server"
+          },
+          {
+            "Key": "StudentName",
+            "Value": "Alexander McWhae"
+          },
+          {
+            "Key": "StudentID ",
+            "Value": "101801822"
+          }
+        ],
+        "NetworkInterfaces": [
+          {
+            "DeleteOnTermination": "true",
+            "DeviceIndex": 0,
+            "SubnetId": {
+              "Ref": "subnet4db1812a"
+            },
+            "PrivateIpAddresses": [
+              {
+                "PrivateIpAddress": "172.31.5.37",
+                "Primary": "true"
+              }
+            ],
+            "GroupSet": [
+              {
+                "Ref": "sgWebServerSG"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "instancei0fe4336ed7f4a8c93": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "DisableApiTermination": "false",
+        "InstanceInitiatedShutdownBehavior": "stop",
+        "IamInstanceProfile": "arn:aws:iam::761311932585:instance-profile/S3AlbumAccessRole",
+        "ImageId": "ami-20874742",
+        "InstanceType": "t2.micro",
+        "KeyName": "FirstKeyPair",
+        "Monitoring": "false",
+        "Tags": [
+          {
+            "Key": "StudentName",
+            "Value": "Alexander McWhae"
+          },
+          {
+            "Key": "Name",
+            "Value": "NAT Instance"
+          },
+          {
+            "Key": "StudentID",
+            "Value": "101801822"
+          }
+        ],
+        "NetworkInterfaces": [
+          {
+            "DeleteOnTermination": "true",
+            "DeviceIndex": 0,
+            "SubnetId": {
+              "Ref": "subnet090d187746cc82423"
+            },
+            "PrivateIpAddresses": [
+              {
+                "PrivateIpAddress": "10.0.1.108",
+                "Primary": "true"
+              }
+            ],
+            "GroupSet": [
+              {
+                "Ref": "sgelbsg"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "rdsdatabase1b": {
+      "Type": "AWS::RDS::DBInstance",
+      "Properties": {
+        "AllocatedStorage": "20",
+        "AllowMajorVersionUpgrade": "false",
+        "AutoMinorVersionUpgrade": "true",
+        "DBInstanceClass": "db.t2.micro",
+        "Port": "3306",
+        "StorageType": "gp2",
+        "BackupRetentionPeriod": "0",
+        "MasterUsername": "s101801822",
+        "MasterUserPassword": "MyPassword",
+        "PreferredBackupWindow": "17:04-17:34",
+        "PreferredMaintenanceWindow": "sat:18:35-sat:19:05",
+        "DBName": "MyDatabase",
+        "Engine": "mysql",
+        "EngineVersion": "5.6.39",
+        "LicenseModel": "general-public-license",
+        "DBSubnetGroupName": {
+          "Ref": "dbsubnetdbsubnetgroup"
+        },
+        "VPCSecurityGroups": [
+          {
+            "Ref": "sgdbtiersg"
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "workload-type",
+            "Value": "other"
+          },
+          {
+            "Key": "StudentName",
+            "Value": "Alexander McWhae"
+          },
+          {
+            "Key": "StudentID",
+            "Value": "101801822"
+          }
+        ]
+      }
+    },
+    "s3admcwhae": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "AccessControl": "Private",
+        "VersioningConfiguration": {
+          "Status": "Suspended"
+        }
+      }
+    },
+    "s3amcwhaecos80021": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "AccessControl": "Private",
+        "VersioningConfiguration": {
+          "Status": "Suspended"
+        },
+        "Tags": [
+          {
+            "Key": "StudentName",
+            "Value": "Alexander McWhae"
+          },
+          {
+            "Key": "StudentID",
+            "Value": "101801822"
+          }
+        ]
+      }
+    },
+    "dbsubnetdbsubnetgroup": {
+      "Type": "AWS::RDS::DBSubnetGroup",
+      "Properties": {
+        "DBSubnetGroupDescription": "DB Instance Subnet Group",
+        "SubnetIds": [
+          {
+            "Ref": "subnet05c454bf2a7c828a9"
+          },
+          {
+            "Ref": "subnet06a035b2f8df07af9"
+          }
+        ]
+      }
+    },
+    "sgwebtiersg": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "WebSecurityGroup",
+        "VpcId": {
+          "Ref": "vpc00c068c280d3d7ba2"
+        },
+        "Tags": [
+          {
+            "Key": "StudentID",
+            "Value": "101801822"
+          },
+          {
+            "Key": "Name",
+            "Value": "web_tier_sg"
+          },
+          {
+            "Key": "StudentName",
+            "Value": "Alexander McWhae"
+          }
+        ]
+      }
+    },
+    "sgdbtiersg": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "DatabaseSecurityGroup",
+        "VpcId": {
+          "Ref": "vpc00c068c280d3d7ba2"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "db_tier_sg"
+          },
+          {
+            "Key": "StudentName",
+            "Value": "Alexander McWhae"
+          },
+          {
+            "Key": "StudentID",
+            "Value": "101801822"
+          }
+        ]
+      }
+    },
+    "sgdefault": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "default VPC security group",
+        "VpcId": {
+          "Ref": "vpc4191d926"
+        }
+      }
+    },
+    "sgWebServerSG": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Web Server Security Group",
+        "VpcId": {
+          "Ref": "vpc4191d926"
+        },
+        "Tags": [
+          {
+            "Key": "StudentName",
+            "Value": "Alexander McWhae"
+          },
+          {
+            "Key": "StudentID",
+            "Value": "101801822"
+          }
+        ]
+      }
+    },
+    "sgelbsg": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Security group for the elastic load balancer",
+        "VpcId": {
+          "Ref": "vpc00c068c280d3d7ba2"
+        },
+        "Tags": [
+          {
+            "Key": "StudentName",
+            "Value": "Alexander McWhae"
+          },
+          {
+            "Key": "StudentID",
+            "Value": "101801822"
+          },
+          {
+            "Key": "Name",
+            "Value": "elb_sg"
+          }
+        ]
+      }
+    },
+    "sgrdslaunchwizard": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Created from the RDS Management Console: 2018/09/05 08:23:28",
+        "VpcId": {
+          "Ref": "vpc00c068c280d3d7ba2"
+        }
+      }
+    },
+    "sgassign2WebServerSecurityGroup1BLB2YF0ZQEW4": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Enable HTTPS access via port 443",
+        "VpcId": {
+          "Ref": "vpc02092720bd7668d4e"
+        },
+        "Tags": [
+          {
+            "Key": "StudentID",
+            "Value": "101801822"
+          },
+          {
+            "Key": "StudentName",
+            "Value": "Alexander McWhae"
+          }
+        ]
+      }
+    },
+    "sgnatsg": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "nat_sg",
+        "VpcId": {
+          "Ref": "vpc00c068c280d3d7ba2"
+        },
+        "Tags": [
+          {
+            "Key": "StudentID",
+            "Value": "101801822"
+          },
+          {
+            "Key": "Name",
+            "Value": "nat_sg"
+          },
+          {
+            "Key": "StudentName",
+            "Value": "Alexander McWhae"
+          }
+        ]
+      }
+    },
+    "dbsgdefault": {
+      "Type": "AWS::RDS::DBSecurityGroup",
+      "Properties": {
+        "GroupDescription": "default"
+      }
+    },
+    "s3policyadmcwhae": {
+      "Type": "AWS::S3::BucketPolicy",
+      "Properties": {
+        "Bucket": {
+          "Ref": "s3admcwhae"
+        },
+        "PolicyDocument": {
+          "Version": "2008-10-17",
+          "Id": "PolicyForCloudFrontPrivateContent",
+          "Statement": [
+            {
+              "Sid": "1",
+              "Effect": "Allow",
+              "Principal": {
+                "AWS": "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity E1QEF70D03ULN0"
+              },
+              "Action": "s3:GetObject",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:aws:s3:::",
+                    {
+                      "Ref": "s3admcwhae"
+                    },
+                    "/*"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    "scalingDecreaseGroupSize": {
+      "Type": "AWS::AutoScaling::ScalingPolicy",
+      "Properties": {
+        "AdjustmentType": "ChangeInCapacity",
+        "PolicyType": "StepScaling",
+        "StepAdjustments": [
+          {
+            "ScalingAdjustment": -1,
+            "MetricIntervalUpperBound": 0.0
+          }
+        ],
+        "AutoScalingGroupName": {
+          "Ref": "asgAssignment2ScalingGroup"
+        }
+      }
+    },
+    "scalingIncreaseGroupSize": {
+      "Type": "AWS::AutoScaling::ScalingPolicy",
+      "Properties": {
+        "AdjustmentType": "ChangeInCapacity",
+        "PolicyType": "StepScaling",
+        "StepAdjustments": [
+          {
+            "ScalingAdjustment": 1,
+            "MetricIntervalLowerBound": 0.0
+          }
+        ],
+        "AutoScalingGroupName": {
+          "Ref": "asgAssignment2ScalingGroup"
+        }
+      }
+    },
+    "alarmHighCPUUtilization": {
+      "Type": "AWS::CloudWatch::Alarm",
+      "Properties": {
+        "ActionsEnabled": "true",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "EvaluationPeriods": "1",
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": "60",
+        "Statistic": "Average",
+        "Threshold": "65.0",
+        "AlarmActions": [
+          {
+            "Ref": "scalingIncreaseGroupSize"
+          }
+        ],
+        "Dimensions": [
+          {
+            "Name": "AutoScalingGroupName",
+            "Value": "Assignment2 Scaling Group"
+          }
+        ]
+      }
+    },
+    "alarmLowCPUUtilization": {
+      "Type": "AWS::CloudWatch::Alarm",
+      "Properties": {
+        "ActionsEnabled": "true",
+        "ComparisonOperator": "LessThanOrEqualToThreshold",
+        "EvaluationPeriods": "1",
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Period": "60",
+        "Statistic": "Average",
+        "Threshold": "30.0",
+        "AlarmActions": [
+          {
+            "Ref": "scalingDecreaseGroupSize"
+          }
+        ],
+        "Dimensions": [
+          {
+            "Name": "AutoScalingGroupName",
+            "Value": "Assignment2 Scaling Group"
+          }
+        ]
+      }
+    },
+    "acl1": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "0.0.0.0/0",
+        "Egress": "true",
+        "Protocol": "-1",
+        "RuleAction": "allow",
+        "RuleNumber": "100",
+        "NetworkAclId": {
+          "Ref": "acldad224bc"
+        }
+      }
+    },
+    "acl2": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "0.0.0.0/0",
+        "Protocol": "-1",
+        "RuleAction": "allow",
+        "RuleNumber": "100",
+        "NetworkAclId": {
+          "Ref": "acldad224bc"
+        }
+      }
+    },
+    "acl3": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "0.0.0.0/0",
+        "Egress": "true",
+        "Protocol": "-1",
+        "RuleAction": "allow",
+        "RuleNumber": "100",
+        "NetworkAclId": {
+          "Ref": "acl00fb1d124eaed49c4"
+        }
+      }
+    },
+    "acl4": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "0.0.0.0/0",
+        "Protocol": "-1",
+        "RuleAction": "allow",
+        "RuleNumber": "100",
+        "NetworkAclId": {
+          "Ref": "acl00fb1d124eaed49c4"
+        }
+      }
+    },
+    "acl5": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "0.0.0.0/0",
+        "Egress": "true",
+        "Protocol": "-1",
+        "RuleAction": "allow",
+        "RuleNumber": "100",
+        "NetworkAclId": {
+          "Ref": "acl0432dbf965082b3a9"
+        }
+      }
+    },
+    "acl6": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "0.0.0.0/0",
+        "Protocol": "-1",
+        "RuleAction": "allow",
+        "RuleNumber": "100",
+        "NetworkAclId": {
+          "Ref": "acl0432dbf965082b3a9"
+        }
+      }
+    },
+    "subnetacl1": {
+      "Type": "AWS::EC2::SubnetNetworkAclAssociation",
+      "Properties": {
+        "NetworkAclId": {
+          "Ref": "acldad224bc"
+        },
+        "SubnetId": {
+          "Ref": "subnet13d4764b"
+        }
+      }
+    },
+    "subnetacl2": {
+      "Type": "AWS::EC2::SubnetNetworkAclAssociation",
+      "Properties": {
+        "NetworkAclId": {
+          "Ref": "acldad224bc"
+        },
+        "SubnetId": {
+          "Ref": "subnet4db1812a"
+        }
+      }
+    },
+    "subnetacl3": {
+      "Type": "AWS::EC2::SubnetNetworkAclAssociation",
+      "Properties": {
+        "NetworkAclId": {
+          "Ref": "acldad224bc"
+        },
+        "SubnetId": {
+          "Ref": "subnet51e2cf18"
+        }
+      }
+    },
+    "subnetacl4": {
+      "Type": "AWS::EC2::SubnetNetworkAclAssociation",
+      "Properties": {
+        "NetworkAclId": {
+          "Ref": "acl00fb1d124eaed49c4"
+        },
+        "SubnetId": {
+          "Ref": "subnet0a82820a294deaa7c"
+        }
+      }
+    },
+    "subnetacl5": {
+      "Type": "AWS::EC2::SubnetNetworkAclAssociation",
+      "Properties": {
+        "NetworkAclId": {
+          "Ref": "acl0432dbf965082b3a9"
+        },
+        "SubnetId": {
+          "Ref": "subnet06a035b2f8df07af9"
+        }
+      }
+    },
+    "subnetacl6": {
+      "Type": "AWS::EC2::SubnetNetworkAclAssociation",
+      "Properties": {
+        "NetworkAclId": {
+          "Ref": "acl0432dbf965082b3a9"
+        },
+        "SubnetId": {
+          "Ref": "subnet03538c76643bcca10"
+        }
+      }
+    },
+    "subnetacl7": {
+      "Type": "AWS::EC2::SubnetNetworkAclAssociation",
+      "Properties": {
+        "NetworkAclId": {
+          "Ref": "acl0432dbf965082b3a9"
+        },
+        "SubnetId": {
+          "Ref": "subnet090d187746cc82423"
+        }
+      }
+    },
+    "subnetacl8": {
+      "Type": "AWS::EC2::SubnetNetworkAclAssociation",
+      "Properties": {
+        "NetworkAclId": {
+          "Ref": "acl0432dbf965082b3a9"
+        },
+        "SubnetId": {
+          "Ref": "subnet05c454bf2a7c828a9"
+        }
+      }
+    },
+    "gw1": {
+      "Type": "AWS::EC2::VPCGatewayAttachment",
+      "Properties": {
+        "VpcId": {
+          "Ref": "vpc00c068c280d3d7ba2"
+        },
+        "InternetGatewayId": {
+          "Ref": "igw013ac26b370acaad8"
+        }
+      }
+    },
+    "gw2": {
+      "Type": "AWS::EC2::VPCGatewayAttachment",
+      "Properties": {
+        "VpcId": {
+          "Ref": "vpc4191d926"
+        },
+        "InternetGatewayId": {
+          "Ref": "igwf1e8b195"
+        }
+      }
+    },
+    "gw3": {
+      "Type": "AWS::EC2::VPCGatewayAttachment",
+      "Properties": {
+        "VpcId": {
+          "Ref": "vpc02092720bd7668d4e"
+        },
+        "InternetGatewayId": {
+          "Ref": "igw067ffebcaaad01186"
+        }
+      }
+    },
+    "subnetroute1": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "rtb0174afbd14d85310b"
+        },
+        "SubnetId": {
+          "Ref": "subnet05c454bf2a7c828a9"
+        }
+      }
+    },
+    "subnetroute3": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "rtb0174afbd14d85310b"
+        },
+        "SubnetId": {
+          "Ref": "subnet06a035b2f8df07af9"
+        }
+      }
+    },
+    "subnetroute5": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "rtb066d8e4ca00d8e6da"
+        },
+        "SubnetId": {
+          "Ref": "subnet0a82820a294deaa7c"
+        }
+      }
+    },
+    "subnetroute7": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "rtb0f430ed2bcb8cf75c"
+        },
+        "SubnetId": {
+          "Ref": "subnet03538c76643bcca10"
+        }
+      }
+    },
+    "subnetroute8": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "rtb0f430ed2bcb8cf75c"
+        },
+        "SubnetId": {
+          "Ref": "subnet090d187746cc82423"
+        }
+      }
+    },
+    "route1": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "RouteTableId": {
+          "Ref": "rtb0174afbd14d85310b"
+        },
+        "InstanceId": {
+          "Ref": "instancei0fe4336ed7f4a8c93"
+        }
+      }
+    },
+    "route2": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "rtb0174afbd14d85310b"
+        },
+        "GatewayId": "vpce-00fcf3bc8cca0dc53"
+      }
+    },
+    "route3": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "RouteTableId": {
+          "Ref": "rtb55568433"
+        },
+        "GatewayId": {
+          "Ref": "igwf1e8b195"
+        }
+      },
+      "DependsOn": "gw2"
+    },
+    "route4": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "RouteTableId": {
+          "Ref": "rtb066d8e4ca00d8e6da"
+        },
+        "GatewayId": {
+          "Ref": "igw067ffebcaaad01186"
+        }
+      },
+      "DependsOn": "gw3"
+    },
+    "route5": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "RouteTableId": {
+          "Ref": "rtb0f430ed2bcb8cf75c"
+        },
+        "GatewayId": {
+          "Ref": "igw013ac26b370acaad8"
+        }
+      },
+      "DependsOn": "gw1"
+    },
+    "dchpassoc1": {
+      "Type": "AWS::EC2::VPCDHCPOptionsAssociation",
+      "Properties": {
+        "VpcId": {
+          "Ref": "vpc4191d926"
+        },
+        "DhcpOptionsId": {
+          "Ref": "doptd0b1dbb7"
+        }
+      }
+    },
+    "dchpassoc2": {
+      "Type": "AWS::EC2::VPCDHCPOptionsAssociation",
+      "Properties": {
+        "VpcId": {
+          "Ref": "vpc00c068c280d3d7ba2"
+        },
+        "DhcpOptionsId": {
+          "Ref": "doptd0b1dbb7"
+        }
+      }
+    },
+    "dchpassoc3": {
+      "Type": "AWS::EC2::VPCDHCPOptionsAssociation",
+      "Properties": {
+        "VpcId": {
+          "Ref": "vpc02092720bd7668d4e"
+        },
+        "DhcpOptionsId": {
+          "Ref": "doptd0b1dbb7"
+        }
+      }
+    },
+    "assoc1": {
+      "Type": "AWS::EC2::EIPAssociation",
+      "Properties": {
+        "AllocationId": {
+          "Fn::GetAtt": [
+            "eip132381369",
+            "AllocationId"
+          ]
+        },
+        "InstanceId": {
+          "Ref": "instancei0fe4336ed7f4a8c93"
+        }
+      }
+    },
+    "ingress1": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgwebtiersg"
+        },
+        "IpProtocol": "tcp",
+        "FromPort": "80",
+        "ToPort": "80",
+        "SourceSecurityGroupId": {
+          "Ref": "sgelbsg"
+        },
+        "SourceSecurityGroupOwnerId": "761311932585"
+      }
+    },
+    "ingress2": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgwebtiersg"
+        },
+        "IpProtocol": "tcp",
+        "FromPort": "80",
+        "ToPort": "80",
+        "SourceSecurityGroupId": {
+          "Ref": "sgnatsg"
+        },
+        "SourceSecurityGroupOwnerId": "761311932585"
+      }
+    },
+    "ingress3": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgwebtiersg"
+        },
+        "IpProtocol": "tcp",
+        "FromPort": "22",
+        "ToPort": "22",
+        "SourceSecurityGroupId": {
+          "Ref": "sgelbsg"
+        },
+        "SourceSecurityGroupOwnerId": "761311932585"
+      }
+    },
+    "ingress4": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgdbtiersg"
+        },
+        "IpProtocol": "tcp",
+        "FromPort": "22",
+        "ToPort": "22",
+        "SourceSecurityGroupId": {
+          "Ref": "sgwebtiersg"
+        },
+        "SourceSecurityGroupOwnerId": "761311932585"
+      }
+    },
+    "ingress5": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgdbtiersg"
+        },
+        "IpProtocol": "tcp",
+        "FromPort": "3306",
+        "ToPort": "3306",
+        "SourceSecurityGroupId": {
+          "Ref": "sgwebtiersg"
+        },
+        "SourceSecurityGroupOwnerId": "761311932585"
+      }
+    },
+    "ingress6": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgdefault"
+        },
+        "IpProtocol": "-1",
+        "SourceSecurityGroupId": {
+          "Ref": "sgdefault"
+        },
+        "SourceSecurityGroupOwnerId": "761311932585"
+      }
+    },
+    "ingress7": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgWebServerSG"
+        },
+        "IpProtocol": "tcp",
+        "FromPort": "80",
+        "ToPort": "80",
+        "CidrIp": "0.0.0.0/0"
+      }
+    },
+    "ingress8": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgWebServerSG"
+        },
+        "IpProtocol": "tcp",
+        "FromPort": "22",
+        "ToPort": "22",
+        "CidrIp": "0.0.0.0/0"
+      }
+    },
+    "ingress9": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgWebServerSG"
+        },
+        "IpProtocol": "tcp",
+        "FromPort": "443",
+        "ToPort": "443",
+        "CidrIp": "0.0.0.0/0"
+      }
+    },
+    "ingress10": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgdefault"
+        },
+        "IpProtocol": "-1",
+        "SourceSecurityGroupId": {
+          "Ref": "sgdefault"
+        },
+        "SourceSecurityGroupOwnerId": "761311932585"
+      }
+    },
+    "ingress11": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgelbsg"
+        },
+        "IpProtocol": "tcp",
+        "FromPort": "80",
+        "ToPort": "80",
+        "CidrIp": "0.0.0.0/0"
+      }
+    },
+    "ingress12": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgelbsg"
+        },
+        "IpProtocol": "tcp",
+        "FromPort": "22",
+        "ToPort": "22",
+        "CidrIp": "0.0.0.0/0"
+      }
+    },
+    "ingress13": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgrdslaunchwizard"
+        },
+        "IpProtocol": "tcp",
+        "FromPort": "3306",
+        "ToPort": "3306",
+        "CidrIp": "136.186.18.228/32"
+      }
+    },
+    "ingress14": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgassign2WebServerSecurityGroup1BLB2YF0ZQEW4"
+        },
+        "IpProtocol": "tcp",
+        "FromPort": "443",
+        "ToPort": "443",
+        "CidrIp": "0.0.0.0/0"
+      }
+    },
+    "ingress15": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgnatsg"
+        },
+        "IpProtocol": "tcp",
+        "FromPort": "80",
+        "ToPort": "80",
+        "CidrIp": "0.0.0.0/0"
+      }
+    },
+    "ingress16": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgdefault"
+        },
+        "IpProtocol": "-1",
+        "SourceSecurityGroupId": {
+          "Ref": "sgdefault"
+        },
+        "SourceSecurityGroupOwnerId": "761311932585"
+      }
+    },
+    "egress1": {
+      "Type": "AWS::EC2::SecurityGroupEgress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgwebtiersg"
+        },
+        "IpProtocol": "-1",
+        "CidrIp": "0.0.0.0/0"
+      }
+    },
+    "egress2": {
+      "Type": "AWS::EC2::SecurityGroupEgress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgdbtiersg"
+        },
+        "IpProtocol": "-1",
+        "CidrIp": "0.0.0.0/0"
+      }
+    },
+    "egress3": {
+      "Type": "AWS::EC2::SecurityGroupEgress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgdefault"
+        },
+        "IpProtocol": "-1",
+        "CidrIp": "0.0.0.0/0"
+      }
+    },
+    "egress4": {
+      "Type": "AWS::EC2::SecurityGroupEgress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgWebServerSG"
+        },
+        "IpProtocol": "-1",
+        "CidrIp": "0.0.0.0/0"
+      }
+    },
+    "egress5": {
+      "Type": "AWS::EC2::SecurityGroupEgress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgdefault"
+        },
+        "IpProtocol": "-1",
+        "CidrIp": "0.0.0.0/0"
+      }
+    },
+    "egress6": {
+      "Type": "AWS::EC2::SecurityGroupEgress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgelbsg"
+        },
+        "IpProtocol": "-1",
+        "CidrIp": "0.0.0.0/0"
+      }
+    },
+    "egress7": {
+      "Type": "AWS::EC2::SecurityGroupEgress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgrdslaunchwizard"
+        },
+        "IpProtocol": "-1",
+        "CidrIp": "0.0.0.0/0"
+      }
+    },
+    "egress8": {
+      "Type": "AWS::EC2::SecurityGroupEgress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgassign2WebServerSecurityGroup1BLB2YF0ZQEW4"
+        },
+        "IpProtocol": "-1",
+        "CidrIp": "0.0.0.0/0"
+      }
+    },
+    "egress9": {
+      "Type": "AWS::EC2::SecurityGroupEgress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgnatsg"
+        },
+        "IpProtocol": "-1",
+        "CidrIp": "0.0.0.0/0"
+      }
+    },
+    "egress10": {
+      "Type": "AWS::EC2::SecurityGroupEgress",
+      "Properties": {
+        "GroupId": {
+          "Ref": "sgdefault"
+        },
+        "IpProtocol": "-1",
+        "CidrIp": "0.0.0.0/0"
+      }
+    }
+  },
+  "Description": ""
+}
